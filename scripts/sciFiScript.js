@@ -5,6 +5,10 @@ var moreButton = document.getElementById("more");
 var choicesBox = document.getElementById("choicesPanel");
 var choice1 = document.getElementById("choice01");
 var choice2 = document.getElementById("choice02");
+var simon = document.getElementById("simon");
+var eu = document.getElementById("eu");
+var fam = document.getElementById("fam");
+var scientist = document.getElementById("okarin");
 
 
 function addName(name) {
@@ -38,10 +42,10 @@ function clearChoices() {
     choice2.innerHTML = "";
 }
 
-var text =[["Old Man", "Hey, kid. I see you over there."],
-           ["Old Man", "Hello? Can you hear me?"],
-          [1,2], 
-          ["Yes", "No"], 
+var text =[["Simon", "For years I doubt my sister has been replaced. Even since 12, she went to another state to study while i stayed in Illinois"],
+           ["Simon", "Days passed and she only came back during Thanksgiving. When she send me the gift yesterday during dinner, she called me Sika."],
+          ["Simon","No way she’ll know how my high school friends call me, since I came to this school 2 months before. "],
+          ["Simon"," Sister Euguette was not here by that time."],
           ["Old Man", "Good. Kids your age have hearing problems, what with their fancy headpods or airphones or what have you."],
            ["Old Man", "Then how come you responded then? Kids these days, I swear..."],
            ["Old Man", "Anyways, let me tell you a story."],
@@ -72,14 +76,36 @@ var text =[["Old Man", "Hey, kid. I see you over there."],
 function start() {
     addName(text[0][0]);
     addText(text[0][1]);
+    eu.visibility="hidden";
+    scientist.visibility="hidden";
 }
 
 function showSimon() {
-
+    simon.style.visibility="visible";
+    eu.style.visibility="hidden";
+    fam.style.visibility="hidden";
+    scientist.style.visibility="hidden";
 }
 
 function showEu() {
+    fam.style.visibility="hidden";
+    simon.style.visibility="hidden";
+    eu.style.visibility="visible";
+    scientist.style.visibility="hidden";
+}
 
+function showFam() {
+    fam.style.visibility="visible";
+    simon.style.visibility="hidden";
+    eu.style.visibility="hidden";
+    scientist.style.visibility="hidden";
+}
+
+function showFam() {
+    fam.style.visibility="hidden";
+    simon.style.visibility="hidden";
+    eu.style.visibility="hidden";
+    scientist.style.visibility="visible";
 }
 
 var i = 1;
@@ -92,6 +118,10 @@ function run(){
         addName(text[i][0]);
         if (text[i][0] == "Simon") {
             showSimon();
+        } else if (text[i][0] == "Cecelia"){
+            showFam();
+        } else if (text[i][0] == "The Scientist") {
+            showSci();
         } else {
             showEu();
         }
@@ -122,4 +152,7 @@ function run(){
 }
 
 start();
+eu.style.visibility="hidden";
+fam.style.visibility="hidden";
+scientist.style.visibility="hidden";
 moreButton.addEventListener("click", run);

@@ -34,7 +34,7 @@ a {
     font-size: medium;
     color: aliceblue;
     left: 130px;
-    top: 550px;
+    bottom: 100px;
 }
 
 button {
@@ -80,7 +80,7 @@ button:hover {
     left: auto;
     height: 200px;
     background-repeat: no-repeat;
-    z-index: 3;
+    z-index: 8;
     /* z-index: -1; */
 }
 
@@ -114,6 +114,18 @@ button:hover {
     z-index: 1;
     bottom: 0px;
 }
+#okarin{
+    position: fixed;
+    left: 900px;
+    z-index: 2;
+    bottom: 0px;
+}
+#fam{
+    position: fixed;
+    left: 900px;
+    z-index: 3;
+    bottom: 0px;
+}
 
 #choicesPanel {
     position: fixed;
@@ -126,6 +138,6 @@ button:hover {
     padding: 2%;
     border: none;
     margin: 10% auto;
-    z-index: 3;
+    z-index: 8;
     
 }
