@@ -3,6 +3,8 @@ var nameBox = document.getElementById("charaName");
 var textBox = document.getElementById("textBox");
 var moreButton = document.getElementById("more");
 var choicesBox = document.getElementById("choicesPanel");
+var choice1 = document.getElementById("choice01");
+var choice2 = document.getElementById("choice02");
 
 
 function addName(name) {
@@ -32,7 +34,8 @@ function createChoiceButton(buttonText, resultText) {
 }
 
 function clearChoices() {
-    choicesBox.innerHTML = "";
+    choice1.innerHTML = "";
+    choice2.innerHTML = "";
 }
 
 var text =[["Old Man", "Hey, kid. I see you over there."],
@@ -71,7 +74,13 @@ function start() {
     addText(text[0][1]);
 }
 
+function showSimon() {
 
+}
+
+function showEu() {
+
+}
 
 var i = 1;
 function run(){
@@ -79,6 +88,13 @@ function run(){
     if (text[i][0] !== 1) {
         clearText();
         addText(text[i][1]);
+        clearName();
+        addName(text[i][0]);
+        if (text[i][0] == "Simon") {
+            showSimon();
+        } else {
+            showEu();
+        }
         i++;
     } else {
         console.log("here");
@@ -87,10 +103,20 @@ function run(){
         var option2 =createChoiceButton(text[i][1], text[i+2][1]);
         i+=3;
         
-        choicesBox.appendChild(option1);
-        choicesBox.appendChild(option2);
+        choice1.appendChild(option1);
+        choice2.appendChild(option2);
         choicesBox.style.display="inline-block";
         moreButton.disabled = true;
+        // console.log("here");
+        // i++;
+        // var option1 = createChoiceButton(text[i][0], text[i+1][1]);
+        // var option2 =createChoiceButton(text[i][1], text[i+2][1]);
+        // i+=3;
+        
+        // choicesBox.appendChild(option1);
+        // choicesBox.appendChild(option2);
+        // choicesBox.style.display="inline-block";
+        // moreButton.disabled = true;
     }
     
 }

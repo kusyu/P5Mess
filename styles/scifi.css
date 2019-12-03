@@ -71,7 +71,7 @@ button:hover {
 
 
 #diaBox {
-    background-image: url("../pictures/box.png");;
+    background-image: url("../pictures/box.png");
     position: fixed;
     width: 80%;
     border: none;
@@ -80,20 +80,52 @@ button:hover {
     left: auto;
     height: 200px;
     background-repeat: no-repeat;
+    z-index: 3;
     /* z-index: -1; */
 }
 
+#choice01{
+    position: fixed;
+    top:390px;
+    left: 380px;
+}
+
+
+#choice02{
+    position: fixed;
+    top:390px;
+    left: 1060px;
+}
+
+#character{
+    position:fixed;
+    left: 20px;
+    bottom: 10px;
+}
+#simon{
+    position: fixed;
+    left: 20px;
+    bottom: 0px;
+    z-index: 1;
+}
+#eu{
+    position: fixed;
+    left: 900px;
+    z-index: 1;
+    bottom: 0px;
+}
+
 #choicesPanel {
-    position: absolute;
+    position: fixed;
     display: none;
     background-image: url("../pictures/choice.png");
     background-repeat: no-repeat;
     left: 300px;
     top: 200px;
-    width: 50%;
+    width: 100%;
     padding: 2%;
     border: none;
     margin: 10% auto;
-    
+    z-index: 3;
     
 }
