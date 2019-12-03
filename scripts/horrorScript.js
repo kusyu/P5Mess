@@ -95,7 +95,7 @@ var text =[["Old Man", "Ohhhh so you wanna hear that one eh? "],
            ["Old Man", "The hiss evaporated from the forest and nothing else strange happened from then on out"],
            ["Old Man", "I proposed to Eugette and she gladly accepted and now here we are my boy"],
            ["Old Man", "So I reckon that’s that then… The story of BoarCave Creek comes to an end"],
-           
+           [4,0],
           ];
 
 
@@ -109,7 +109,7 @@ function start() {
 var i = 1;
 function run(){
     console.log(i);
-    if (text[i][0] !== 1) {
+    if (text[i][0] !== 1 && text[i][0] !== 4) {
         clearText();
         addText(text[i][1]);
         i++;
@@ -124,8 +124,11 @@ function run(){
         choice2.appendChild(option2);
         choicesBox.style.display="inline-block";
         moreButton.disabled = true;
-    }
-    
+    } else if (text[i][0] == 4) {
+        moreButton.removeEventListener("click", run);
+        moreButton.addEventListener("click", function(){
+            location.replace("../index.html");
+        });
 }
 
 start();
