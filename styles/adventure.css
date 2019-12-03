@@ -6,3 +6,24 @@ body {
     background-image:url("../pictures/fantasy.jpg");
     background-color: #cccccc;
 }
+
+#oldman{
+    position: fixed;
+    left: 20px;
+    bottom: 0px;
+    z-index: 1;
+}
+
+#dragon1 {
+    position: fixed;
+    left: 800px;
+    bottom: 70px;
+    z-index: 1;
+}
+
+#dragon2{
+    position: fixed;
+    left: 400px;
+    bottom: 30px;
+    z-index: 2;
+}
