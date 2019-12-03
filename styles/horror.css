@@ -1,0 +1,9 @@
+html {
+    background-color: aliceblue;
+    background-image: url("../pictures/horrorBig.jpg");
+}
+
+body {
+    background-image: url("../pictures/horrorBig.jpg");
+    background-color: #cccccc;
+}
