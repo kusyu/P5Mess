@@ -3,6 +3,9 @@ var nameBox = document.getElementById("charaName");
 var textBox = document.getElementById("textBox");
 var moreButton = document.getElementById("more");
 var choicesBox = document.getElementById("choicesPanel");
+var choice1 = document.getElementById("choice01");
+var choice2 = document.getElementById("choice02");
+
 var myMusic;
 
 //function startGame() {
@@ -52,7 +55,8 @@ function createChoiceButton(buttonText, resultText) {
 }
 
 function clearChoices() {
-    choicesBox.innerHTML = "";
+    choice1.innerHTML = "";
+    choice2.innerHTML = "";
 }
 
 var text =[["Old Man", "Ohhhh so you wanna hear that one eh? "],
@@ -116,8 +120,8 @@ function run(){
         var option2 =createChoiceButton(text[i][1], text[i+2][1]);
         i+=3;
         
-        choicesBox.appendChild(option1);
-        choicesBox.appendChild(option2);
+        choice1.appendChild(option1);
+        choice2.appendChild(option2);
         choicesBox.style.display="inline-block";
         moreButton.disabled = true;
     }
