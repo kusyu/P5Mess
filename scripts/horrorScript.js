@@ -113,6 +113,11 @@ function run(){
         clearText();
         addText(text[i][1]);
         i++;
+    } else if (text[i][0] == 4) {
+        moreButton.removeEventListener("click", run);
+        moreButton.addEventListener("click", function(){
+            location.replace("../index.html");
+        });
     } else {
         console.log("here");
         i++;
@@ -124,11 +129,7 @@ function run(){
         choice2.appendChild(option2);
         choicesBox.style.display="inline-block";
         moreButton.disabled = true;
-    } else if (text[i][0] == 4) {
-        moreButton.removeEventListener("click", run);
-        moreButton.addEventListener("click", function(){
-            location.replace("../index.html");
-        });
+    } 
 }
 
 start();
