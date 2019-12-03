@@ -70,7 +70,7 @@ var text =[["Old Man", "Alright, this is a story that takes place in a far off l
            ["Old Man", "Dragons and knights hate each other. So for me to have to put up with the En-Lau’s for a week was a nightmare for both of us."],
            ["Old Man", "I’ll spare you the details, but it was hours upon hours of vicious torture, rooting for the inferior football team, questions about when we were going to have our sixth kid, etc."],
            ["Old Man", "You get the idea. It was terrible."],
-           ["Old Man", "The only thing that stopped total war from breaking out was Eugene, the calm minded queen that kept us from going at each other’s throats."],
+           ["Old Man", "The only thing that stopped total war from breaking out was Eugette, the calm minded queen that kept us from going at each other’s throats."],
            ["Old Man", "I thought that this turbulent peace would hold over until we returned to America, but alas, I was not prepared for the day of the feast."],
            ["Old Man", "The En-Laus were in charge of cooking the great Toor Kay, a fearful raptor that strikes fear into the heart of all living beings."],
            ["Old Man", "Now, you have to understand that cooking the Toor Kay was an important part of the festival. It wouldn’t be a real Givethanksing without this Toor Kay."],
@@ -89,7 +89,7 @@ var text =[["Old Man", "Alright, this is a story that takes place in a far off l
            ["Old Man", "I snuck into the kitchen. The mother En-Lau was busy with the stuffing, so she didn’t see me enter. The father En-Lau was occupied peeling the potatoes. My chance had arrived."],
            ["Old Man", "With one quick swipe, I took the whole Tofurkey tray and started making my way to the trash can outside. There, nobody could see where it went."],
            ["Old Man", "However, there was something that I didn’t account for."],
-           ["Old Man", "Just as I was about to make the home stretch towards the door, I ran into Eugene."],
+           ["Old Man", "Just as I was about to make the home stretch towards the door, I ran into Eugette."],
            ["Old Man", "She eyed me, and then the dish in my hands."],
            ["Old Man", "As she stood there confused, I remembered the promise that I made."],
            ["Old Man", "Eugene’s perfect smile, her glistening eyes, her absolutely puzzled facial expression. None of them could be tainted by the Tofurkey."],
@@ -98,11 +98,11 @@ var text =[["Old Man", "Alright, this is a story that takes place in a far off l
            ["Old Man", "Maybe the En-Lau's had their own way of doing things, and I was being too insensitive to their choices."],
            ["Old Man", "Was I about to throw away the hard work of the En-Lau's, no matter how terrible it is?"],
            ["Old Man", "Paralyzed by fear, I could feel everyone's of their eyes on me."],
-           ["Old Man", "Surrounded on all sides, the only clarity I could find was with Eugene. I looked at her, then looked down at the Tofurkey."],
+           ["Old Man", "Surrounded on all sides, the only clarity I could find was with Eugette. I looked at her, then looked down at the Tofurkey."],
            ["Old Man", "And then with all my might..."],
            ["Old Man", "I threw the Tofurkey out of the window."],
            ["Old Man", "Anyways, that’s why we don’t see Grandma’s side of the family anymore."],
-
+           [4,0],
           ];
 
 
@@ -116,10 +116,15 @@ function start() {
 var i = 1;
 function run(){
     console.log(i);
-    if (text[i][0] !== 1) {
+    if (text[i][0] !== 1 && text[i][0] !== 4) {
         clearText();
         addText(text[i][1]);
         i++;
+    } else if (text[i][0] == 4) {
+        moreButton.removeEventListener("click", run);
+        moreButton.addEventListener("click", function(){
+            location.replace("../index.html");
+        });
     } else {
         console.log("here");
         i++;
