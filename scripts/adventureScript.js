@@ -64,6 +64,7 @@ var text =[["Old Man", "Alright, this is a story that takes place in a far off l
            ["Old Man", "Now, Eugette was the fairest queen of them all, and it was my honor to carry out this quest."],
            ["Old Man", "Plus, she threatened to hide the remote from me if I didn’t, so I had no choice."],
            ["Old Man", "The quest was to escort the queen to the faraway kingdom and greet the En-Lau’s Dragons for some political schmucking. It was for some royal holiday, like Thanksgiving or something."],
+           [5,0],
            ["Old Man", "Once we arrived in Florida, it was there that I encountered the dreaded En-Lau’s Dragons."],
            ["Old Man", "You see, dragons and knights have one specific thing in common. You know what that is?"],
            [1,2],
@@ -90,12 +91,14 @@ var text =[["Old Man", "Alright, this is a story that takes place in a far off l
            ["Old Man", "That would be nice, but there’s a number of laws preventing that."],
            ["Old Man", "I had to get rid of that dastardly Tofurkey."],
            ["Old Man", "I snuck into the kitchen. The mother En-Lau was busy with the stuffing, so she didn’t see me enter. The father En-Lau was occupied peeling the potatoes. My chance had arrived."],
+           [6,0],
            ["Old Man", "With one quick swipe, I took the whole Tofurkey tray and started making my way to the trash can outside. There, nobody could see where it went."],
            ["Old Man", "However, there was something that I didn’t account for."],
            ["Old Man", "Just as I was about to make the home stretch towards the door, I ran into Eugette."],
            ["Old Man", "She eyed me, and then the dish in my hands."],
            ["Old Man", "As she stood there confused, I remembered the promise that I made."],
            ["Old Man", "Eugene’s perfect smile, her glistening eyes, her absolutely puzzled facial expression. None of them could be tainted by the Tofurkey."],
+           [5,0],
            ["Old Man", "I looked around. The En-Lau’s, troubled by the missing tofurkey were now making their way towards me. My time was running out."],
            ["Old Man", "But then, I thought, 'maybe I was wrong.'"],
            ["Old Man", "Maybe the En-Lau's had their own way of doing things, and I was being too insensitive to their choices."],
@@ -104,6 +107,7 @@ var text =[["Old Man", "Alright, this is a story that takes place in a far off l
            ["Old Man", "Surrounded on all sides, the only clarity I could find was with Eugette. I looked at her, then looked down at the Tofurkey."],
            ["Old Man", "And then with all my might..."],
            ["Old Man", "I threw the Tofurkey out of the window."],
+           [6,0],
            ["Old Man", "Anyways, that’s why we don’t see Grandma’s side of the family anymore."],
            [4,0],
           ];
@@ -114,12 +118,20 @@ function start() {
     addText(text[0][1]);
 }
 
+function hideDragons() {
+    dragon1.style.visibility = "hidden";
+    dragon2.style.visibility = "hidden";
+}
 
+function showDragons() {
+    dragon1.style.visibility = "visible";
+    dragon2.style.visibility = "visible";
+}
 
 var i = 1;
 function run(){
     console.log(i);
-    if (text[i][0] !== 1 && text[i][0] !== 4) {
+    if (text[i][0] !== 1 && text[i][0] !== 4 && text[i][0] !== 5 && text[i][0] !== 6) {
         clearText();
         addText(text[i][1]);
         i++;
@@ -128,6 +140,12 @@ function run(){
         moreButton.addEventListener("click", function(){
             location.replace("../index.html");
         });
+    } else if (text[i][0] == 5) {
+        showDragons();
+        i++;
+    } else if (text[i][0] == 6) {
+        hideDragons();
+        i++;
     } else {
         console.log("here");
         i++;
@@ -145,3 +163,6 @@ function run(){
 
 start();
 moreButton.addEventListener("click", run);
+oldman.style.visibility = "visible";
+dragon1.style.visibility = "hidden";
+dragon2.style.visibility = "hidden";
