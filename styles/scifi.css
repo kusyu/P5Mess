@@ -1,10 +1,10 @@
 html {
     background-color: aliceblue;
-    
+    background-image: url("../pictures/sf_01.png");
 }
 
 body {
-    
+    background-image: url("../pictures/sf_01.png");
     background-color: #cccccc;
    }
 
@@ -71,7 +71,7 @@ button:hover {
 
 
 #diaBox {
-   
+    background-image: url("../pictures/box.png");;
     position: fixed;
     width: 80%;
     border: none;
@@ -86,7 +86,7 @@ button:hover {
 #choicesPanel {
     position: absolute;
     display: none;
-    
+    background-image: url("../pictures/choice.png");
     background-repeat: no-repeat;
     left: 300px;
     top: 200px;
