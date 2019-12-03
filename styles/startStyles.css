@@ -1,8 +1,16 @@
 html {
-    
+    background-image:url("../pictures/prologue.jpg");
+    background-color: #cccccc;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-body {}
+body {
+
+}
+
 
 h1 {
     text-align: right;
