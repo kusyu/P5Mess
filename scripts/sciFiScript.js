@@ -25,8 +25,12 @@ function clearText() {
 }
 
 function createChoiceButton(buttonText, resultText) {    
-    let optionButton = document.createElement("BUTTON");
-    optionButton.innerHTML = buttonText;
+    let optionButton = document.createElement("div");
+    let optionText = document.createElement("p");
+    optionText.className = "choice";
+    optionText.innerHTML = buttonText;
+    optionButton.appendChild(optionText);
+    optionButton.className = "button";
     optionButton.addEventListener("click", function() {
         clearText();
         addText(resultText);

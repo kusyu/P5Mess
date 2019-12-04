@@ -26,8 +26,12 @@ function clearChoices() {
 
 
 function createChoiceButton(buttonText, resultText) {    
-    let optionButton = document.createElement("BUTTON");
-    optionButton.innerHTML = buttonText;
+    let optionButton = document.createElement("div");
+    let optionText = document.createElement("p");
+    optionText.className = "choice";
+    optionText.innerHTML = buttonText;
+    optionButton.appendChild(optionText);
+    optionButton.className = "button";
     optionButton.addEventListener("click", function() {
         clearText();
         addText(resultText);
@@ -39,8 +43,12 @@ function createChoiceButton(buttonText, resultText) {
 }
 
 function createBranchButton(buttonText, link) {    
-    let branchButton = document.createElement("BUTTON");
-    branchButton.innerHTML = buttonText;
+    let branchButton = document.createElement("div");
+    let optionText = document.createElement("p");
+    optionText.className = "choice";
+    optionText.innerHTML = buttonText;
+    branchButton.appendChild(optionText);
+    branchButton.className = "button";
     branchButton.addEventListener("click", function() {
         location.replace(link);
         choicesBox.style.display="none";
