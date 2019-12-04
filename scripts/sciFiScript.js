@@ -25,12 +25,8 @@ function clearText() {
 }
 
 function createChoiceButton(buttonText, resultText) {    
-    let optionButton = document.createElement("div");
-    let optionText = document.createElement("p");
-    optionText.className = "choice";
-    optionText.innerHTML = buttonText;
-    optionButton.appendChild(optionText);
-    optionButton.className = "button";
+    let optionButton = document.createElement("BUTTON");
+    optionButton.innerHTML = buttonText;
     optionButton.addEventListener("click", function() {
         clearText();
         addText(resultText);
@@ -50,29 +46,37 @@ var text =[["Simon", "For years I doubt my sister has been replaced. Even since 
            ["Simon", "Days passed and she only came back during Thanksgiving. When she send me the gift yesterday during dinner, she called me Sika."],
           ["Simon","No way she’ll know how my high school friends call me, since I came to this school 2 months before. "],
           ["Simon"," Sister Euguette was not here by that time."],
-          ["Old Man", "Good. Kids your age have hearing problems, what with their fancy headpods or airphones or what have you."],
-           ["Old Man", "Then how come you responded then? Kids these days, I swear..."],
-           ["Old Man", "Anyways, let me tell you a story."],
-           ["Old Man", "Oh, but I have so many stories to tell, so remind me if I’ve told one before."],
-           ["Old Man", "How would you like to hear about the time that I fought off the great dragon of Wunderland?"],
+          ["Eugutte", "Sika, come here and help me with the pumpkin pie."],
+           ["Eugutte","It’s your favorite food since 6. I got the pumpkin from a farm on my way back."],
+           ["Simon","I'm kinda confused, what shall I respond?"],
            [1,2],
-           ["I’ll listen to this one!", "No thanks."],
-           ["Old Man", "FFFFFFFFFF"],
-           ["Old Man", "Huh? You say I’ve already told that one?"],
-           ["Old Man", "Well that’s just absurd. I’ve never told that story before in my life."],
-           ["Old Man", "Oh, I see, what about the time that *HORROR PLOT PREMISE*? That oughta get you going!"],
+           ["Sika?", "Sure, Sister Eugutte."],
+           ["Eugutte", "Oh sorry my dear Simon. Just a slip of mouth."],
+           ["Simon","My sister’s always clumsy. The first thanksgiving after our parents passed away in that fire, "],
+           ["Simon","she made me a pancake and peacified my cry. We were so lonely at that time. "],
+           ["Simon","All we could do was rely on each other and struggled to survive as a family. She accidentally burned her finger when taking the pan out."],
+           ["Simon","This thought haunted me again and again."],
+           ["","The second day"],
+           ["Cecelia", "Simon what's up?"],
+           ["Simon", "Good. There might be something off about my sister."],
+           ["Cecelia","Yep? I heard there're some rumor about android among the crowd."],
            [1,2],
-           ["Sure thing!", "I’m… I’m good."],
-           ["Old Man", "FFFFFFFFFF"],
-           ["Old Man", "What’s that? I’ve told that story too? Are you sure you’re not confusing me with another old man?"],
-           ["Old Man", "Lemme think…"],
-           ["Old Man", "Aha! You’ll love the story about when *SCIFI PLOT PREMISE*! The thrill, the suspense, the mystery, the thrill, the suspe-"],
+           ["I don't beleive so.", "Maybe... my sister is an android?"],
+           ["Cecelia","Your sister is an android?"],
+           ["Cecelia", "Maybe it's true.. Have you ever heard her talking about other stuff?"],
+           ["Simon","Sure let's go and check it out."],
+           ["","Back to home, Sister Eugette's room"],
+           ["Simon", "I shouldn't open her computer"],
+           ["Simon","Ayyy it's locked, what's the password?"],
            [1,2],
-           ["Yeah yeah, let’s hear that one already.", "You’re repeating yourself again, old man."],
-           ["Old Man", "I-I would… I would never!"],
-           ["Old Man", "Hmm… you’re quite the picky one today, ain’t ya?"],
-           ["Old Man", "Here’s an idea, I’m gonna tell a story that I want to tell, and you’re going to listen, no questions asked."],
-           ["Old Man", "That’s unfair? The world’s unfair, kid."],
+           ["12379489", "check the memo under the keyboard"],
+           ["Simon","There's a memo with some number on it."],
+           ["Simon","Okay, now check."],
+           ["Simon","mailbox..."],
+           ["The Scientist","Hello young man, you find my secret"],
+           ["Eugutte","Simon? Don't you dare check my computer"],
+           ["The Scientist", "Now you have no where to run"],
+           ["The Scientist", "Join my research and become the next experiment subject"],
            
           ];
 
@@ -105,13 +109,17 @@ function showFam() {
     scientist.style.visibility="hidden";
 }
 
-function showFam() {
+function showSci() {
     fam.style.visibility="hidden";
     simon.style.visibility="hidden";
     eu.style.visibility="hidden";
     scientist.style.visibility="visible";
 }
-
+{/* <style>
+audio::-webkit-media-controls-play-button {
+  background-color: rgba(230, 230, 255, 1);
+}
+</style> */}
 var i = 1;
 function run(){
     console.log(i);
