@@ -145,7 +145,7 @@ function run(){
     } else if (text[i][0] == 4) {
         moreButton.removeEventListener("click", run);
         moreButton.addEventListener("click", function(){
-            location.replace("../index.html");
+            location.replace("../index.html")});
     } else {
         console.log("here");
         i++;
