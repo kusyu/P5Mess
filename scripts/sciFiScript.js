@@ -81,7 +81,7 @@ var text =[["Simon", "For years I doubt my sister has been replaced. Even since 
            ["Eugutte","Simon? Don't you dare check my computer"],
            ["The Scientist", "Now you have no where to run"],
            ["The Scientist", "Join my research and become the next experiment subject"],
-           
+           [4,0],
           ];
 
 
@@ -127,7 +127,7 @@ audio::-webkit-media-controls-play-button {
 var i = 1;
 function run(){
     console.log(i);
-    if (text[i][0] !== 1) {
+    if (text[i][0] !== 1 && text[i][0] !== 4) {
         clearText();
         addText(text[i][1]);
         clearName();
@@ -142,6 +142,10 @@ function run(){
             showEu();
         }
         i++;
+    } else if (text[i][0] == 4) {
+        moreButton.removeEventListener("click", run);
+        moreButton.addEventListener("click", function(){
+            location.replace("../index.html");
     } else {
         console.log("here");
         i++;
